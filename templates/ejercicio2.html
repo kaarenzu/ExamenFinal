@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulario de Personas</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/estilosEjercicio1.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Inicio de sesión</h1>
+        <form action="/ejercicio2" method="POST">
+            <label for="nombre">Ingresa tu nombre</label>
+            <input type="text" id="nombre" name="nombre" required>
+            <br>
+            <label for="contraseña">Ingresa tu contraseña</label>
+            <input type="password" id="contraseña" name="contraseña" required>
+            <br>
+            <button type="submit">Enviar</button>
+        </form>
+        {% if resultado %}
+            <p>Bienvenido {{rol}} {{nombre}}</p>
+        {% endif %}
+        {% if error %}
+            <p>Usuario o contraseña incorrectos</p>
+        {% endif %}
+    </div>
+</body>
+</html>
